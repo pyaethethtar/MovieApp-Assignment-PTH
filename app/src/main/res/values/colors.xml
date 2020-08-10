@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="colorBackground">#212840</color>
+    <color name="colorCardviewBackground">#303852</color>
+    <color name="colorTabLayoutBackground">#ee293650</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="textGray">#707893</color>
+    <color name="textGray2">#4F4F4F</color>
+    <color name="colorYellowAccent">#F5C40D</color>
+</resources>

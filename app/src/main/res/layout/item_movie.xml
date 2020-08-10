@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/margin_medium_3"
+        android:paddingBottom="@dimen/margin_small"
+        android:background="@color/colorBackground">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivPopularFilm"
+        android:layout_width="@dimen/pic_movie_width"
+        android:layout_height="@dimen/pic_movie_height"
+        android:src="@drawable/greetings_01"
+        android:scaleType="fitXY"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPopularFilmName"
+        android:layout_width="@dimen/pic_movie_width"
+        android:layout_height="wrap_content"
+        android:text="Westworld"
+        style="@style/whiteText"
+        android:layout_below="@id/ivPopularFilm"
+        android:layout_marginTop="@dimen/margin_medium"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvReviewCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="7,60"
+        style="@style/whiteText.small"
+        android:layout_below="@id/tvPopularFilmName"
+        android:layout_marginTop="@dimen/margin_small"/>
+
+
+    <androidx.appcompat.widget.AppCompatRatingBar
+        android:id="@+id/rbPopularFilm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/tvReviewCount"
+        android:layout_toRightOf="@id/tvReviewCount"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:numStars="5"
+        android:rating="4.5"
+        android:progressTint="@color/colorYellowAccent"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/iv_top"
+        style="@style/whiteText"
+        android:background="@drawable/roundedcorner_bg_fill"
+        android:padding="@dimen/margin_medium_1"
+        android:layout_margin="@dimen/margin_medium"
+        android:visibility="gone"/>
+
+    </RelativeLayout>
+</com.google.android.material.card.MaterialCardView>

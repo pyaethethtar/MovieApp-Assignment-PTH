@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.movieapp.views.viewpods.MoviesViewpod
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tvPopularFilms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_popular_films"
+        style="@style/grayText"
+        android:layout_marginLeft="@dimen/margin_medium_3"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMovies"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvPopularFilms"
+        android:layout_marginTop="@dimen/margin_medium"
+        />
+
+</com.example.movieapp.views.viewpods.MoviesViewpod>

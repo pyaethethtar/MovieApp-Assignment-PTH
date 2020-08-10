@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.DetailsActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/callapsing_toolbar_height">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            app:scrimAnimationDuration="1000"
+            app:contentScrim="@color/colorBackground">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/ivAppbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/pic_toolbar"
+                    android:scaleType="centerCrop"/>
+
+                <TextView
+                    android:id="@+id/tvYear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2016"
+                    style="@style/whiteText"
+                    android:background="@drawable/roundedcorner_bg_fill"
+                    android:padding="@dimen/margin_medium"
+                    android:layout_alignLeft="@id/tvMovieName"
+                    android:layout_alignTop="@id/rbMovie"/>
+
+                <TextView
+                    android:id="@+id/tvMovieName"
+                    android:layout_width="@dimen/tv_movie_name_width"
+                    android:layout_height="wrap_content"
+                    android:text="Fantastic Beasts and Where to Find Them"
+                    style="@style/whiteText.big"
+                    android:layout_marginLeft="@dimen/margin_medium_3"
+                    android:layout_marginBottom="@dimen/margin_medium_3"
+                    android:layout_marginTop="@dimen/margin_medium_2"
+                    android:layout_alignParentBottom="true"/>
+
+                <TextView
+                    android:id="@+id/tvRateCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9,75"
+                    android:textSize="@dimen/text_big_1x"
+                    android:textColor="@color/colorWhite"
+                    android:layout_above="@id/tvMovieName"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginRight="@dimen/margin_medium_3"/>
+
+                <RatingBar
+                    android:id="@+id/rbMovie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:rating="4.5"
+                    android:progressTint="@color/colorYellowAccent"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:layout_above="@id/tvVotesCount"
+                    android:layout_alignRight="@id/tvVotesCount"/>
+
+                <TextView
+                    android:id="@+id/tvVotesCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="38876 Votes"
+                    style="@style/grayText"
+                    android:layout_toLeftOf="@id/tvRateCount"
+                    android:layout_alignBottom="@id/tvRateCount"
+                    android:paddingBottom="@dimen/margin_medium"
+                    android:layout_marginRight="@dimen/margin_medium"/>
+
+
+            </RelativeLayout>
+
+
+
+
+
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                app:layout_collapseMode="pin">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_search"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignTop="@id/btnBack"
+                        android:layout_marginRight="@dimen/margin_medium_3"
+                        android:padding="@dimen/margin_medium"/>
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/btnBack"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_navigate_before_white_24dp"
+                        android:layout_marginTop="@dimen/margin_medium"/>
+                </RelativeLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorBackground">
+
+            <TextView
+                android:id="@+id/tvDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2h 30min"
+                style="@style/whiteText.small"
+                android:drawableLeft="@drawable/ic_access_time_yellow_24dp"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:drawablePadding="@dimen/margin_medium"
+                android:paddingLeft="@dimen/margin_medium"
+                android:paddingRight="@dimen/margin_medium"
+                android:paddingTop="@dimen/margin_medium"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTypes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tvDuration"
+                android:layout_toLeftOf="@id/btnFavDetails"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:layout_alignTop="@id/tvDuration"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnFavDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_favorite_border_white_24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@id/tvDuration"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:padding="@dimen/margin_medium"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnFavDetailsSelected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_favorite_yellow_24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@id/tvDuration"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:padding="@dimen/margin_medium"
+                android:visibility="gone"/>
+
+            <include
+                android:id="@+id/vpStroyline"
+                layout="@layout/viewpod_storyline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvDuration"/>
+
+
+            <include
+                android:id="@+id/vpActors"
+                layout="@layout/viewpod_people"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/vpStroyline"
+                />
+
+            <include
+                android:id="@+id/vpAboutFilm"
+                layout="@layout/viewpod_about_film"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/vpActors"/>
+
+            <include
+                android:id="@+id/vpCreators"
+                layout="@layout/viewpod_people"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/vpAboutFilm"
+                android:layout_marginTop="@dimen/margin_large"
+                />
+
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

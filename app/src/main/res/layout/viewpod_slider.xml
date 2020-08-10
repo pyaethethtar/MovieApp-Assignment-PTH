@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.movieapp.views.viewpods.SliderViewpod
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.smarteist.autoimageslider.SliderView
+        android:id="@+id/sliderview"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/slider_height"
+        app:sliderAnimationDuration="600"
+        app:sliderAutoCycleDirection="back_and_forth"
+        app:sliderAutoCycleEnabled="true"
+        app:sliderIndicatorAnimationDuration="600"
+        app:sliderIndicatorGravity="bottom|center_horizontal"
+        app:sliderIndicatorOrientation="horizontal"
+        app:sliderIndicatorMargin="15dp"
+        app:sliderIndicatorPadding="3dp"
+        app:sliderIndicatorRadius="2dp"
+        app:sliderIndicatorSelectedColor="@color/colorYellowAccent"
+        app:sliderIndicatorUnselectedColor="@color/textGray"
+        app:sliderScrollTimeInSec="1"
+        app:sliderStartAutoCycle="true"/>
+
+
+
+</com.example.movieapp.views.viewpods.SliderViewpod>

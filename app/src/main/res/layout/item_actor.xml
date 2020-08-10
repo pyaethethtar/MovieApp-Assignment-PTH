@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/pic_actor_width"
+    android:layout_height="@dimen/pic_actor_height"
+    android:paddingLeft="@dimen/margin_medium_3">
+
+    <ImageView
+        android:id="@+id/ivActor"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/pic_leonardo"
+        android:scaleType="fitXY"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btnFav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_favorite_border_white_24dp"
+        android:padding="@dimen/margin_medium"
+        android:layout_alignParentEnd="true"/>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btnFavSelected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_favorite_yellow_24dp"
+        android:padding="@dimen/margin_medium"
+        android:layout_alignParentEnd="true"
+        android:visibility="gone"/>
+    <TextView
+        android:id="@+id/tvActorName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Leonardo Dicaprio"
+        style="@style/whiteText.small"
+        android:layout_above="@id/tvLikedMovieCount"
+        android:layout_alignLeft="@id/tvLikedMovieCount"/>
+
+    <TextView
+        android:id="@+id/tvLikedMovieCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You like 10 Movies"
+        style="@style/grayText.smaller"
+        android:drawableLeft="@drawable/ic_thumb_up_yellow_12dp"
+        android:drawablePadding="@dimen/margin_small"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginBottom="@dimen/margin_medium"
+        />
+
+
+
+
+</RelativeLayout>

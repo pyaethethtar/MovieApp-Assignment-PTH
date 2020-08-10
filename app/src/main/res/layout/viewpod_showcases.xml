@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.movieapp.views.viewpods.ShowcaseViewpod
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/margin_medium_3"
+    android:paddingBottom="@dimen/margin_medium_3"
+    android:paddingRight="@dimen/margin_medium_3"
+    android:background="@color/colorCardviewBackground">
+
+
+            <TextView
+                android:id="@+id/tvShowCases"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_showcases"
+                style="@style/grayText"
+                android:layout_marginLeft="@dimen/margin_medium_3"/>
+
+            <TextView
+                android:id="@+id/btnMoreShowcases"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_more_showcases"
+                style="@style/whiteText"
+                android:textAllCaps="true"
+                android:layout_alignTop="@id/tvShowCases"
+                android:layout_alignParentEnd="true"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvShowcases"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvShowCases"
+                android:paddingTop="@dimen/margin_medium"
+                android:paddingBottom="@dimen/margin_medium"/>
+
+
+
+
+</com.example.movieapp.views.viewpods.ShowcaseViewpod>

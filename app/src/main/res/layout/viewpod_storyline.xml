@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.movieapp.views.viewpods.StorylineViewpod
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/margin_medium_3">
+
+    <TextView
+        android:id="@+id/tvStorylineTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_storyline_title"
+        style="@style/grayText"/>
+
+    <TextView
+        android:id="@+id/tvStoryline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_sample"
+        style="@style/whiteText.small"
+        android:layout_below="@id/tvStorylineTitle"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_alignLeft="@id/tvStorylineTitle"
+        android:lineSpacingMultiplier="1.2"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnPlayTrailer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play Trailer"
+        android:textSize="@dimen/text_regular_2x"
+        android:textColor="@color/colorWhite"
+        android:drawableLeft="@drawable/ic_play_circle_filled_gray_24dp"
+        android:drawablePadding="@dimen/margin_medium"
+        android:background="@drawable/roundedcorner_bg_fill"
+        android:layout_alignLeft="@id/tvStorylineTitle"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:layout_below="@id/tvStoryline"
+        android:paddingLeft="@dimen/margin_medium"
+        android:paddingRight="@dimen/margin_medium_2" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnRateMovie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rate Movie"
+        android:textSize="@dimen/text_regular_2x"
+        android:textColor="@color/colorWhite"
+        android:drawableLeft="@drawable/ic_star_yellow_24dp"
+        android:drawablePadding="@dimen/margin_medium"
+        android:background="@drawable/roundedcorner_bg_stroke"
+        android:layout_toRightOf="@id/btnPlayTrailer"
+        android:layout_alignBottom="@id/btnPlayTrailer"
+        android:layout_marginLeft="@dimen/margin_medium_2"
+        android:paddingLeft="@dimen/margin_medium_2"
+        android:paddingRight="@dimen/margin_medium_2"
+        />
+
+</com.example.movieapp.views.viewpods.StorylineViewpod>

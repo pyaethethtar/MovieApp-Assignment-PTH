@@ -1,0 +1,45 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+
+    <style name="grayText">
+        <item name="android:textColor">@color/textGray</item>
+        <item name="android:textSize">@dimen/text_regular</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+    <style name="grayText.small">
+        <item name="android:textSize">@dimen/text_small</item>
+    </style>
+    <style name="grayText.smaller">
+        <item name="android:textSize">8sp</item>
+    </style>
+
+    <style name="whiteGrayText">
+        <item name="android:textColor">@color/textGray2</item>
+        <item name="android:textSize">@dimen/text_regular</item>
+    </style>
+
+    <style name="whiteText">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">@dimen/text_regular</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="whiteText.small">
+        <item name="android:textSize">@dimen/text_small</item>
+    </style>
+    <style name="whiteText.big">
+        <item name="android:textSize">@dimen/text_heading_1x</item>
+    </style>
+
+
+
+</resources>

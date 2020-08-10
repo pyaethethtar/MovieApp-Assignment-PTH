@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomTabLayout">
+        <attr name="normalTextColor" format="color"/>
+        <attr name="selectedTextColor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="CircleBackgroundTransparent">
+        <attr name="colorFill" format="color"/>
+        <attr name="size" format="dimension"/>
+    </declare-styleable>
+</resources>

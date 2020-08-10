@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.movieapp.views.viewpods.PeopleViewpod
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/margin_large"
+    android:paddingBottom="@dimen/margin_large"
+    android:background="@color/colorBackground">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvBestActors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_best_actors"
+        style="@style/grayText"
+        android:layout_marginLeft="@dimen/margin_medium_3"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnMoreActors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_more_actors"
+        style="@style/whiteText"
+        android:textAllCaps="true"
+        android:layout_alignTop="@id/tvBestActors"
+        android:layout_marginRight="@dimen/margin_medium_3"
+        android:layout_alignParentEnd="true"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPeople"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvBestActors"
+        android:layout_marginTop="@dimen/margin_medium"/>
+
+</com.example.movieapp.views.viewpods.PeopleViewpod>

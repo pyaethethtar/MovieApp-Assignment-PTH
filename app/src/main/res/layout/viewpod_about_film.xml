@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.movieapp.views.viewpods.AboutFilmViewpod
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/margin_medium_3"
+    android:background="@color/colorBackground">
+
+    <TextView
+        android:id="@+id/tvAboutFilm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_about_film"
+        style="@style/grayText.small"/>
+    <TextView
+        android:id="@+id/tvOriginalTitle0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_original_title"
+        style="@style/whiteGrayText"
+        android:layout_below="@id/tvAboutFilm"
+        android:layout_marginTop="@dimen/margin_medium_3"/>
+
+    <TextView
+        android:id="@+id/tvOriginalTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fantastic Beasts and Where to Find Them Them"
+        style="@style/whiteText"
+        android:layout_toRightOf="@id/tvOriginalTitle0"
+        android:layout_alignTop="@id/tvOriginalTitle0"
+        android:layout_marginLeft="@dimen/margin_medium_3"/>
+
+    <TextView
+        android:id="@+id/tvType0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_type"
+        style="@style/whiteGrayText"
+        android:layout_below="@id/tvOriginalTitle"
+        android:layout_marginTop="@dimen/margin_medium_2"/>
+
+    <TextView
+        android:id="@+id/tvType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Family, Fantasy, Adventure"
+        style="@style/whiteText"
+        android:layout_toRightOf="@id/tvType0"
+        android:layout_alignTop="@id/tvType0"
+        android:layout_alignLeft="@id/tvOriginalTitle"/>
+    <TextView
+        android:id="@+id/tvProduction0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_production"
+        style="@style/whiteGrayText"
+        android:layout_below="@id/tvType"
+        android:layout_marginTop="@dimen/margin_medium_2"/>
+    <TextView
+        android:id="@+id/tvProduction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="United Kindgom, USA"
+        style="@style/whiteText"
+        android:layout_toRightOf="@id/tvProduction0"
+        android:layout_alignTop="@id/tvProduction0"
+        android:layout_alignLeft="@id/tvOriginalTitle"/>
+    <TextView
+    android:id="@+id/tvPremiere0"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/tv_premiere"
+    style="@style/whiteGrayText"
+    android:layout_below="@id/tvProduction"
+    android:layout_marginTop="@dimen/margin_medium_2"/>
+    <TextView
+        android:id="@+id/tvPremiere"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="8 November 2016 (World)"
+        style="@style/whiteText"
+        android:layout_toRightOf="@id/tvPremiere0"
+        android:layout_alignTop="@id/tvPremiere0"
+        android:layout_alignLeft="@id/tvOriginalTitle"/>
+
+    <TextView
+        android:id="@+id/tvDescription0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_description"
+        style="@style/whiteGrayText"
+        android:layout_below="@id/tvPremiere"
+        android:layout_marginTop="@dimen/margin_medium_2"/>
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_sample"
+        style="@style/whiteText"
+        android:layout_toRightOf="@id/tvDescription0"
+        android:layout_alignTop="@id/tvDescription0"
+        android:layout_alignLeft="@id/tvOriginalTitle"
+        android:maxLines="5"
+        android:ellipsize="end"/>
+    <TextView
+        android:id="@+id/btnMore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_more"
+        android:textColor="@color/colorYellowAccent"
+        android:textSize="@dimen/text_regular"
+        android:layout_toEndOf="@id/tvDescription"
+        android:layout_alignBottom="@id/tvDescription"/>
+
+
+</com.example.movieapp.views.viewpods.AboutFilmViewpod>

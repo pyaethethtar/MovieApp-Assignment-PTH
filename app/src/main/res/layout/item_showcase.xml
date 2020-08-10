@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/vdo_movie_width"
+    android:layout_height="@dimen/vdo_movie_height"
+    android:paddingLeft="@dimen/margin_medium_2">
+
+
+    
+    <ImageView
+        android:id="@+id/ivShowcase"
+        android:layout_width="@dimen/vdo_movie_width"
+        android:layout_height="@dimen/vdo_movie_height"
+        android:background="@color/colorCardviewBackground"
+        android:scaleType="fitXY"
+        />
+
+    <TextView
+        android:id="@+id/tvShowcaseName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Passengers"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/text_regular_2x"
+        android:textStyle="bold"
+        android:layout_above="@id/tvShowcaseDate"
+        android:layout_alignLeft="@id/tvShowcaseDate"/>
+
+    <TextView
+        android:id="@+id/tvShowcaseDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="15 December 2016"
+        style="@style/grayText"
+        android:layout_marginBottom="@dimen/margin_medium_2"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/margin_medium_2"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btnPlayShowcase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_play_circle_filled_yellow_50dp"
+        android:layout_centerInParent="true"/>
+
+
+
+</RelativeLayout>

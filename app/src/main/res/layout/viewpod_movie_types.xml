@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.movieapp.views.viewpods.MovieTypesViewpod
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.example.movieapp.views.components.CustomTabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/margin_medium_3"
+        app:tabMode="scrollable"
+        app:tabBackground="@color/colorTabLayoutBackground"
+        app:tabRippleColor="@color/colorYellowAccent"
+        app:tabIndicatorColor="@color/colorYellowAccent"
+        app:normalTextColor="@color/textGray"
+        app:selectedTextColor="@color/colorWhite"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvGenreMovies"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tabLayout"/>
+
+    <include
+        android:id="@+id/vpEmpty"
+        layout="@layout/viewpod_empty"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_below="@id/tabLayout"
+        android:visibility="gone"/>
+
+
+
+</com.example.movieapp.views.viewpods.MovieTypesViewpod>
