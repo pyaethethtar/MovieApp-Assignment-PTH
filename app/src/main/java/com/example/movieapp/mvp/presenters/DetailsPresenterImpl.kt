@@ -12,7 +12,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 
 class DetailsPresenterImpl: DetailsPresenter, AbstractBasePresenter<DetailsView>() {
 
-    private val mMovieModel : MovieModel = MovieModelImpl
+    var mMovieModel : MovieModel = MovieModelImpl
 
     override fun onDetailsUiReady(lifecycleOwner: LifecycleOwner, id: Int) {
 

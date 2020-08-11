@@ -3,6 +3,7 @@ package com.example.movieapp.mvp.presenters
 import android.util.Log
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
+import com.example.movieapp.data.model.MovieModel
 import com.example.movieapp.data.model.MovieModelImpl
 import com.example.movieapp.mvp.views.MainView
 
@@ -10,7 +11,7 @@ class MainPresenterImpl: MainPresenter, AbstractBasePresenter<MainView>() {
 
 
 
-    private val mMovieModel = MovieModelImpl
+    var mMovieModel: MovieModel = MovieModelImpl
 
 
     override fun onUiReady(lifecycleOwner: LifecycleOwner) {

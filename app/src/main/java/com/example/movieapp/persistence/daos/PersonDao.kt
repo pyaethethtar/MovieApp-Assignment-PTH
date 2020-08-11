@@ -3,6 +3,7 @@ package com.example.movieapp.persistence.daos
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.movieapp.data.vos.PersonVO
 
@@ -17,6 +18,9 @@ interface PersonDao {
 
     @Insert
     fun insertAllPeople(people: List<PersonVO>)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertPerson(person: PersonVO)
 
 
 }
