@@ -1,10 +1,8 @@
-package com.example.movieapp.adapters
+package com.example.shared
 
 import androidx.recyclerview.widget.RecyclerView
-import com.example.movieapp.R
-import com.example.movieapp.views.viewholders.BaseViewHolder
 
-abstract class BaseAdapter<T:BaseViewHolder<W>, W> : RecyclerView.Adapter<T>(){
+abstract class BaseAdapter<T: BaseViewHolder<W>, W> : RecyclerView.Adapter<T>() {
 
     var mData : MutableList<W> = mutableListOf()
 
@@ -26,6 +24,4 @@ abstract class BaseAdapter<T:BaseViewHolder<W>, W> : RecyclerView.Adapter<T>(){
         mData.add(data)
         notifyDataSetChanged()
     }
-
-
 }

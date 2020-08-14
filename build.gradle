@@ -5,13 +5,14 @@ buildscript {
     repositories {
         google()
         jcenter()
-        
+
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.3'
+        classpath 'com.android.tools.build:gradle:3.5.4'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+        classpath 'me.moallemi.gradle:advanced-build-version:1.7.1'
     }
 }
 
@@ -26,3 +27,18 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+def loadSensitiveData() {
+    Properties verySensitiveDataProperties = new Properties()
+    verySensitiveDataProperties.load(project.rootProject.file('very_sensitive_data.properties').newDataInputStream())
+    return verySensitiveDataProperties
+}
+
+def verySensitiveDP = loadSensitiveData()
+
+ext {
+    verySensitiveData = verySensitiveDP.getProperty('MY_SENSITIVE_DATA')
+    baseUrl = verySensitiveDP.getProperty('BASE_URL')
+}
+
+apply from: 'libraries.gradle'

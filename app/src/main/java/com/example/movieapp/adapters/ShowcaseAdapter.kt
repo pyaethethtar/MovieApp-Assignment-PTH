@@ -2,11 +2,11 @@ package com.example.movieapp.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
 import com.example.movieapp.R
 import com.example.movieapp.data.vos.MovieVO
-import com.example.movieapp.views.viewholders.BaseViewHolder
 import com.example.movieapp.views.viewholders.ShowcaseViewHolder
+import com.example.shared.BaseAdapter
+import com.example.shared.BaseViewHolder
 
 class ShowcaseAdapter: BaseAdapter<BaseViewHolder<MovieVO>, MovieVO>() {
 

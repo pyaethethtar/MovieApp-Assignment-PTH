@@ -4,6 +4,33 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'me.moallemi.advanced-build-version'
+
+advancedVersioning {
+    nameOptions {
+        versionMajor 0
+        versionMinor 0
+        versionPatch 1
+        //versionBuild 8
+    }
+    codeOptions {
+        versionCodeType 'AUTO_INCREMENT_ONE_STEP'
+        //dependsOnTasks 'release' // defaultValue
+    }
+    outputOptions {
+//        ${appName}: name of main module
+//        ${projectName}: name of root project
+//        ${flavorName}: flavor name
+//        ${buildType}: build type
+//        ${versionName}: version name
+//        ${versionCode}: version code
+        renameOutput true
+        nameFormat '${appName}-v${versionName}'
+    }
+}
+
+def appVersionName = advancedVersioning.versionName
+def appVersionCode = advancedVersioning.versionCode
 
 android {
     compileSdkVersion 29
@@ -12,64 +39,132 @@ android {
         applicationId "com.example.movieapp"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        versionCode appVersionCode
+        versionName appVersionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField 'String', 'MY_ACCOUNT', "$verySensitiveData"
+        buildConfigField 'String', 'BASE_URL', "$baseUrl"
     }
     kotlinOptions {
         jvmTarget = "1.8"
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
+            debuggable false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+        }
+    }
+
+    productFlavors{
+        def BASE_URL_FIELD = "BASE_URL_FIELD"
+        def BASE_URL_DEV = "\"https://dev.padcmyanmar.com/\""
+        def BASE_URL_PROD = "\"https://padcmyanmar.com/\""
+        def BASE_URL_STAGGING = "\"https://stagging.padcmyanmar.com/\""
+
+        flavorDimensions "appMode"
+        dev{
+            dimension  "appMode"
+            applicationIdSuffix  ".dev"
+            manifestPlaceholders = [appName : "@string/app_name_dev"]
+            buildConfigField "String", BASE_URL_FIELD, BASE_URL_DEV
+        }
+        prod{
+            dimension  "appMode"
+            applicationIdSuffix  ".prod"
+            manifestPlaceholders = [appName : "@string/app_name_production"]
+            buildConfigField "String", BASE_URL_FIELD, BASE_URL_PROD
+        }
+        stagging{
+            dimension "appMode"
+            applicationIdSuffix ".stagging"
+            manifestPlaceholders = [appName : "@string/app_name_stagging"]
+            buildConfigField "String", BASE_URL_FIELD, BASE_URL_STAGGING
+
         }
     }
 }
 
 dependencies {
+    implementation project(":shared")
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.core:core-ktx:1.3.1'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    implementation 'com.google.android.material:material:1.3.0-alpha01'
+    //implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation rootProject.ext.library.appcompat
 
-    implementation 'com.google.code.gson:gson:2.8.6' //Gson
+    //implementation 'androidx.core:core-ktx:1.3.1'
+    implementation rootProject.ext.library.core
+
+    //implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation rootProject.ext.library.constraintLayout
+
+    //implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation rootProject.ext.library.legacy
+
+    //testImplementation 'junit:junit:4.12'
+    testImplementation rootProject.ext.library.junit
+
+    //androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation rootProject.ext.library.androidJunit
+
+    //androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    androidTestImplementation rootProject.ext.library.espresso
+
+    //implementation 'com.google.android.material:material:1.3.0-alpha01'
+    implementation rootProject.ext.library.material
+
+    //Gson
+    //implementation 'com.google.code.gson:gson:2.8.6'
+    implementation rootProject.ext.library.gson
+
     //Retrofit
-    implementation 'com.squareup.retrofit2:retrofit:2.6.1'
-    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
-    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.6.1'
+//    implementation 'com.squareup.retrofit2:retrofit:2.6.1'
+//    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+//    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.6.1'
+    implementation rootProject.ext.library.retrofit
+    implementation rootProject.ext.library.converterGson
+    implementation rootProject.ext.library.adapterRxJava2
 
 
-    def lifecycle_version = "2.2.0"
-    def room_version = "2.2.3"
+//    def lifecycle_version = "2.2.0"
+//    def room_version = "2.2.3"
+
     // Annotation processor
-    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"// LiveData
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    //kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+    // LiveData
+    //implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    kapt rootProject.ext.library.annotationProcessor
+    implementation rootProject.ext.library.liveData
+
 
     // lifecycle components
-    implementation "android.arch.lifecycle:extensions:$lifecycle_version"
-    kapt "android.arch.lifecycle:compiler:$lifecycle_version"
+//    implementation "android.arch.lifecycle:extensions:$lifecycle_version"
+//    kapt "android.arch.lifecycle:compiler:$lifecycle_version"
+    implementation rootProject.ext.library.lifecycleExtension
+    kapt rootProject.ext.library.lifecycleCompiler
 
     //Glide
-    implementation 'com.github.bumptech.glide:glide:4.11.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+//    implementation 'com.github.bumptech.glide:glide:4.11.0'
+////    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    implementation rootProject.ext.library.glide
 
 //rxKotlin
-    implementation 'com.github.ReactiveX:RxKotlin:2.x-SNAPSHOT'
+    //implementation 'com.github.ReactiveX:RxKotlin:2.x-SNAPSHOT'
+    implementation rootProject.ext.library.rxKotlin
 
     //rxAndroid
-    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    //implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation rootProject.ext.library.rxAndroid
 
     // Room
-    implementation "androidx.room:room-runtime:$room_version"
-    kapt "androidx.room:room-compiler:$room_version"
+//    implementation "androidx.room:room-runtime:$room_version"
+//    kapt "androidx.room:room-compiler:$room_version"
+    kapt rootProject.ext.library.roomCompiler
+    implementation rootProject.ext.library.roomRuntime
 
     //ImageSlider with round indicator
     implementation 'com.github.smarteist:autoimageslider:1.3.9'

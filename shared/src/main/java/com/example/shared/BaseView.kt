@@ -1,4 +1,4 @@
-package com.example.movieapp.mvp.views
+package com.example.shared
 
 interface BaseView {
 

@@ -7,6 +7,7 @@ import com.example.movieapp.data.vos.MovieVO
 import com.example.movieapp.delegates.MoviesDelegate
 import com.example.movieapp.mvp.presenters.MainPresenterImpl
 import com.example.movieapp.views.viewpods.MoviesViewpod
+import com.example.shared.BaseViewHolder
 import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.item_movie.view.*
 import kotlinx.android.synthetic.main.viewpod_movies.view.*

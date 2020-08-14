@@ -12,7 +12,6 @@ import retrofit2.http.Query
 
 interface MovieAPI {
 
-
     @GET(GET_POPULAR_MOVIES)
     fun getPopularMovies(@Query(API_KEY_PARAM) apiKey: String): Observable<GetMoviesResponse>
 
@@ -36,8 +35,5 @@ interface MovieAPI {
 
     @GET("$GET_MOVIE_DETAILS/{MOVIE_ID}")
     fun getMovieDetails(@Path("MOVIE_ID") movieId: Int, @Query(API_KEY_PARAM) apiKey: String): Observable<MovieVO>
-
-
-
 
 }

@@ -1,7 +1,6 @@
 package com.example.movieapp.activities
 
-import android.graphics.Paint
-import androidx.appcompat.app.AppCompatActivity
+
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProviders
 import com.example.movieapp.R
@@ -12,11 +11,11 @@ import com.example.movieapp.mvp.presenters.MainPresenter
 import com.example.movieapp.mvp.presenters.MainPresenterImpl
 import com.example.movieapp.mvp.views.MainView
 import com.example.movieapp.views.viewpods.*
+import com.example.shared.BaseActivity
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.item_actor.*
 
-class MainActivity : MainView, BaseActivity() {
+class MainActivity : MainView, BaseActivity(){
 
 
     private lateinit var mPresenter : MainPresenter

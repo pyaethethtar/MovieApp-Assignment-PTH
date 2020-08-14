@@ -17,9 +17,9 @@ abstract class MovieDB : RoomDatabase(){
     companion object{
 
         val DB_NAME = "Movie_DB"
-        var dbInstance:MovieDB?=null
+        var dbInstance: MovieDB?=null
 
-        fun getDBInstance(context: Context):MovieDB{
+        fun getDBInstance(context: Context): MovieDB {
             when(dbInstance){
                 null -> {
                     dbInstance = Room.databaseBuilder(context, MovieDB::class.java, DB_NAME)

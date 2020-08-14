@@ -4,6 +4,7 @@ import android.view.View
 import com.bumptech.glide.Glide
 import com.example.movieapp.data.vos.MovieVO
 import com.example.movieapp.utils.IMAGE_URL
+import com.example.shared.BaseViewHolder
 import kotlinx.android.synthetic.main.item_showcase.view.*
 
 class ShowcaseViewHolder(itemView: View) : BaseViewHolder<MovieVO>(itemView) {

@@ -3,7 +3,6 @@ package com.example.movieapp.activities
 import android.content.Context
 import android.content.Intent
 import android.graphics.Paint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModelProviders
@@ -20,8 +19,8 @@ import com.example.movieapp.utils.IMAGE_URL
 import com.example.movieapp.views.viewpods.AboutFilmViewpod
 import com.example.movieapp.views.viewpods.PeopleViewpod
 import com.example.movieapp.views.viewpods.StorylineViewpod
+import com.example.shared.BaseActivity
 import kotlinx.android.synthetic.main.activity_details.*
-import kotlinx.android.synthetic.main.item_actor.*
 import kotlinx.android.synthetic.main.viewpod_people.*
 import kotlinx.android.synthetic.main.viewpod_people.view.*
 

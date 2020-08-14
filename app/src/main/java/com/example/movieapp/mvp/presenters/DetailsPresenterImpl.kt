@@ -8,6 +8,7 @@ import com.example.movieapp.data.model.MovieModel
 import com.example.movieapp.data.model.MovieModelImpl
 import com.example.movieapp.data.vos.MovieVO
 import com.example.movieapp.mvp.views.DetailsView
+import com.example.shared.AbstractBasePresenter
 import io.reactivex.android.schedulers.AndroidSchedulers
 
 class DetailsPresenterImpl: DetailsPresenter, AbstractBasePresenter<DetailsView>() {

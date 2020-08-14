@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">MovieApp</string>
+    <string name="app_name_dev">MovieApp(Dev)</string>
+    <string name="app_name_production">MovieApp</string>
+    <string name="app_name_stagging">StaggingMovie</string>
+
+
     <string name="tv_discover">Discover</string>
     <string name="tv_popular_films">Best Popular Films and Serials</string>
     <string name="tv_check_showtimes">Check Movie Showtimes</string>

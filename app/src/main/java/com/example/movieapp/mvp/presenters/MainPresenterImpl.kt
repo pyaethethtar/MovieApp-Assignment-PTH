@@ -6,6 +6,7 @@ import androidx.lifecycle.Observer
 import com.example.movieapp.data.model.MovieModel
 import com.example.movieapp.data.model.MovieModelImpl
 import com.example.movieapp.mvp.views.MainView
+import com.example.shared.AbstractBasePresenter
 
 class MainPresenterImpl: MainPresenter, AbstractBasePresenter<MainView>() {
 
