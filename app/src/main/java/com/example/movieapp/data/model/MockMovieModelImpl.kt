@@ -5,11 +5,14 @@ import androidx.lifecycle.MutableLiveData
 import com.example.movieapp.data.vos.GenresVO
 import com.example.movieapp.data.vos.MovieVO
 import com.example.movieapp.data.vos.PersonVO
+import com.example.movieapp.data.vos.VideoVO
 import com.example.movieapp.dummy.getDummyGenres
 import com.example.movieapp.dummy.getDummyMovies
 import com.example.movieapp.dummy.getDummyPeople
+import com.example.movieapp.dummy.getDummyVideos
 
 object MockMovieModelImpl: MovieModel {
+
 
     override fun getPopularMovies(onError: (String) -> Unit): LiveData<List<MovieVO>> {
         val liveData = MutableLiveData<List<MovieVO>>()
@@ -62,4 +65,15 @@ object MockMovieModelImpl: MovieModel {
         liveData.postValue(getDummyPeople())
         return liveData
     }
+
+    override fun getVideoById(
+        movieId: Int,
+        onSuccess: (List<VideoVO>) -> Unit,
+        onError: (String) -> Unit
+    ) {
+        onSuccess(getDummyVideos())
+
+    }
+
+
 }

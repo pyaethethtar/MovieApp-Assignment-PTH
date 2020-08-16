@@ -38,6 +38,10 @@ class MainPresenterImpl: MainPresenter, AbstractBasePresenter<MainView>() {
         mView?.setFavPeople()
     }
 
+    override fun onTapPlay(movieId: Int) {
+        requestMovieVideo(movieId)
+    }
+
     private fun loadMoviesFromApi(){
         mMovieModel.getMoviesFromApiAndSaveToDatabase(onSuccess = {}, onError = {})
     }
@@ -105,6 +109,18 @@ class MainPresenterImpl: MainPresenter, AbstractBasePresenter<MainView>() {
                 mView?.displayBestActors(it)
             }
         })
+    }
+
+    private fun requestMovieVideo(id: Int){
+        mMovieModel.getVideoById(id,
+            onSuccess = {
+                mView?.playTrailerVideo(it.first())
+            },
+            onError = {
+
+                Log.e("result3", "error")
+            }
+        )
     }
 
 

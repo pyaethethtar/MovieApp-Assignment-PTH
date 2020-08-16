@@ -4,10 +4,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.example.movieapp.R
 import com.example.movieapp.data.vos.MovieVO
+import com.example.movieapp.delegates.MoviesDelegate
 import com.example.movieapp.views.viewholders.SliderViewHolder
 import com.smarteist.autoimageslider.SliderViewAdapter
 
-class SliderAdapter : SliderViewAdapter<SliderViewHolder>() {
+class SliderAdapter(private val delegate: MoviesDelegate) : SliderViewAdapter<SliderViewHolder>() {
 
     var mData : MutableList<MovieVO> = arrayListOf()
 
@@ -15,7 +16,7 @@ class SliderAdapter : SliderViewAdapter<SliderViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup?): SliderViewHolder {
 
         val view = LayoutInflater.from(parent?.context).inflate(R.layout.item_slider_image, parent, false)
-        return SliderViewHolder(view)
+        return SliderViewHolder(view, delegate)
     }
 
     override fun onBindViewHolder(viewHolder: SliderViewHolder?, position: Int) {

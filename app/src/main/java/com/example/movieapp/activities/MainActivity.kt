@@ -1,15 +1,20 @@
 package com.example.movieapp.activities
 
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import androidx.lifecycle.ViewModelProviders
 import com.example.movieapp.R
 import com.example.movieapp.data.vos.GenresVO
 import com.example.movieapp.data.vos.MovieVO
 import com.example.movieapp.data.vos.PersonVO
+import com.example.movieapp.data.vos.VideoVO
 import com.example.movieapp.mvp.presenters.MainPresenter
 import com.example.movieapp.mvp.presenters.MainPresenterImpl
 import com.example.movieapp.mvp.views.MainView
+import com.example.movieapp.utils.VIDEO_URL
 import com.example.movieapp.views.viewpods.*
 import com.example.shared.BaseActivity
 import io.reactivex.disposables.CompositeDisposable
@@ -52,11 +57,13 @@ class MainActivity : MainView, BaseActivity(){
         mMovieTypesViewpod.setDelegateAndLifecycleOwner(mPresenter, this)
 
         mShowcasesViewpod = vpShowcases as ShowcaseViewpod
+        mShowcasesViewpod.setDelegate(mPresenter)
 
         mPeopleViewpod = vpActors as PeopleViewpod
         mPeopleViewpod.setDelegate(mPresenter)
 
         mSliderViewpod = vpSlider as SliderViewpod
+        mSliderViewpod.setDelegate(mPresenter)
 
     }
 
@@ -98,6 +105,12 @@ class MainActivity : MainView, BaseActivity(){
 
     override fun setFavPeople() {
         mPeopleViewpod.setFavMovie()
+    }
+
+
+    override fun playTrailerVideo(video : VideoVO) {
+        var intent = Intent(Intent.ACTION_VIEW, Uri.parse(VIDEO_URL+video.key))
+        startActivity(intent)
     }
 
 

@@ -3,6 +3,7 @@ package com.example.movieapp.mvp.views
 import com.example.movieapp.data.vos.GenresVO
 import com.example.movieapp.data.vos.MovieVO
 import com.example.movieapp.data.vos.PersonVO
+import com.example.movieapp.data.vos.VideoVO
 import com.example.shared.BaseView
 
 interface MainView : BaseView {
@@ -15,4 +16,5 @@ interface MainView : BaseView {
     fun displayBestActors(actors: List<PersonVO>)
     fun displayEmptyViewpod()
     fun navigateToMovieDetails(id: Int)
+    fun playTrailerVideo(video : VideoVO)
 }

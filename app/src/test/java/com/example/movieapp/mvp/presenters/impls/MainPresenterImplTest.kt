@@ -11,6 +11,7 @@ import com.example.movieapp.data.model.MovieModelImpl
 import com.example.movieapp.dummy.getDummyGenres
 import com.example.movieapp.dummy.getDummyMovies
 import com.example.movieapp.dummy.getDummyPeople
+import com.example.movieapp.dummy.getDummyVideos
 import com.example.movieapp.mvp.presenters.MainPresenterImpl
 import com.example.movieapp.mvp.views.MainView
 import io.mockk.MockKAnnotations
@@ -87,4 +88,14 @@ class MainPresenterImplTest {
             mView.navigateToMovieDetails(tappedMovieId)
         }
     }
+
+    @Test
+    fun onTapPlay_callPlayTrailerVideo(){
+        val tappedMovieId = 1
+        mPresenter.onTapPlay(tappedMovieId)
+        verify {
+            mView.playTrailerVideo(getDummyVideos().first())
+        }
+    }
+
 }

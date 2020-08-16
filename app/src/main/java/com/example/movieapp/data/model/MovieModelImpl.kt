@@ -6,6 +6,7 @@ import androidx.lifecycle.LiveData
 import com.example.movieapp.data.vos.GenresVO
 import com.example.movieapp.data.vos.MovieVO
 import com.example.movieapp.data.vos.PersonVO
+import com.example.movieapp.data.vos.VideoVO
 import com.example.movieapp.utils.API_KEY
 import com.example.movieapp.utils.EM_NO_INTERNET_CONNECTION
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -138,5 +139,24 @@ object MovieModelImpl: MovieModel, BaseModel() {
     override fun getNowPlayingMovies(onError: (String) -> Unit): LiveData<List<MovieVO>> {
         return mTheDB.movieDao().getNowPlayingMovies()
     }
+
+    @SuppressLint("CheckResult")
+    override fun getVideoById(
+        movieId: Int,
+        onSuccess: (List<VideoVO>) -> Unit,
+        onError: (String) -> Unit
+    ) {
+        mMovieApi.getMovieVideos(movieId, API_KEY)
+            .map { it.results.toList() }
+            .subscribeOn(Schedulers.io())
+            .subscribe({
+                onSuccess(it)
+            },{
+                onError(it.localizedMessage ?: EM_NO_INTERNET_CONNECTION)
+            })
+    }
+
+
+
 
 }

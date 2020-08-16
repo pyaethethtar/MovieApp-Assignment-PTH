@@ -26,7 +26,7 @@ class MovieTypesViewpod @JvmOverloads constructor(
     var genreIdList : MutableList<Int> = mutableListOf()
     var genreId: Int = 12
 
-    var movieItem = R.layout.item_movie
+
 
     override fun onFinishInflate() {
         super.onFinishInflate()
@@ -40,7 +40,7 @@ class MovieTypesViewpod @JvmOverloads constructor(
 
                 genreId = genreIdList.getOrElse(tabLayout.selectedTabPosition, {12})
                 mDelegate.onTabGenre(mLifecycleOwner, genreId)
-                Log.e("result", genreId.toString())
+                //Log.e("result", genreId.toString())
 
             }
 

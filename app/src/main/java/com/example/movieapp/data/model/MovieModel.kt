@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import com.example.movieapp.data.vos.GenresVO
 import com.example.movieapp.data.vos.MovieVO
 import com.example.movieapp.data.vos.PersonVO
-import io.reactivex.Observable
+import com.example.movieapp.data.vos.VideoVO
 
 interface MovieModel {
 
@@ -17,4 +17,6 @@ interface MovieModel {
     fun getMoviesByGenres(genreId: Int) : LiveData<List<MovieVO>>
    // fun getMovieList(onError: (String) -> Unit) : LiveData<List<MovieVO>>
     fun getBestActors(onError: (String) -> Unit): LiveData<List<PersonVO>>
+    fun getVideoById(movieId: Int, onSuccess: (List<VideoVO>) -> Unit, onError: (String) -> Unit)
+
 }

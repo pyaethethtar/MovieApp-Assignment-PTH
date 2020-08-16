@@ -1,7 +1,8 @@
 package com.example.movieapp.activities
 
-import androidx.appcompat.app.AppCompatActivity
+
 import android.os.Bundle
+import android.view.View
 import com.example.movieapp.BuildConfig
 import com.example.movieapp.R
 import com.example.shared.BaseActivity
@@ -16,5 +17,19 @@ class GradleActivity : BaseActivity(){
         tvSensitiveData.text = BuildConfig.MY_ACCOUNT
         tvBaseUrl.text = BuildConfig.BASE_URL_FIELD
 
+
+
+
     }
+
+
+    fun showSensitiveData(){
+        tvSensitiveData.visibility = View.VISIBLE
+    }
+    fun hideSensitiveData(){
+        tvSensitiveData.visibility = View.GONE
+    }
+
+
+
 }

@@ -8,4 +8,6 @@ interface MoviesDelegate {
 
     fun onTabGenre(lifecycleOwner: LifecycleOwner, genreId: Int)
 
+    fun onTapPlay(movieId : Int)
+
 }

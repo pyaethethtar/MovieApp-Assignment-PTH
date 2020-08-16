@@ -1,9 +1,7 @@
 package com.example.movieapp.network
 
 import com.example.movieapp.data.vos.MovieVO
-import com.example.movieapp.network.responses.GetActorsResponse
-import com.example.movieapp.network.responses.GetGenresListResponse
-import com.example.movieapp.network.responses.GetMoviesResponse
+import com.example.movieapp.network.responses.*
 import com.example.movieapp.utils.*
 import io.reactivex.Observable
 import retrofit2.http.GET
@@ -36,4 +34,6 @@ interface MovieAPI {
     @GET("$GET_MOVIE_DETAILS/{MOVIE_ID}")
     fun getMovieDetails(@Path("MOVIE_ID") movieId: Int, @Query(API_KEY_PARAM) apiKey: String): Observable<MovieVO>
 
+    @GET("$GET_MOVIE_DETAILS/{MOVIE_ID}/$GET_VIDEOS")
+    fun getMovieVideos(@Path("MOVIE_ID") movieId: Int, @Query(API_KEY_PARAM) apiKey: String) : Observable<GetVideoResponse>
 }
